@@ -13,7 +13,9 @@ Le premier objectif est pour les décisions opérationnelles :
 
 On appelle ces données des OLTP (Online Transactional Processing).
 
-![](Aspose.Words.4518f7f8-6e9a-4328-a0ad-35a1f5e5d7c2.001.jpeg)
+<p align="center">
+  <img src="Aspose.Words.4518f7f8-6e9a-4328-a0ad-35a1f5e5d7c2.001.jpeg" />
+</p>
 
 Les caractéristiques des OLTP sont souvent :
 
@@ -35,7 +37,9 @@ On appelle ces données des OLAP (Online Analytical Processing)
 
 Au vu des objectifs différents, on a souvent des OLTP et OLAP séparé.
 
-![](Aspose.Words.4518f7f8-6e9a-4328-a0ad-35a1f5e5d7c2.002.png)
+<p align="center">
+  <img src="Aspose.Words.4518f7f8-6e9a-4328-a0ad-35a1f5e5d7c2.002.png" />
+</p>
 
 ## Data Warehouse
 
@@ -47,7 +51,9 @@ Il suit quelque règles :
 - Des performances de requêtage important (surtout en lecture)
 - Permettre l’analyse de données
 
-![](Aspose.Words.4518f7f8-6e9a-4328-a0ad-35a1f5e5d7c2.003.png)
+<p align="center">
+  <img src="Aspose.Words.4518f7f8-6e9a-4328-a0ad-35a1f5e5d7c2.003.png" />
+</p>
 
 Les data warehouses sont la combinaison de différentes sources de données, on les centralise, les joints pour permettre une analyse complète de nos données. Comme les données des différentes sources ne sont pas issues de la même source, on doit les transformer pour qu’elles aient un format compatible au data warehouse et qu’elles puissent interagir entre elles, puis on les charge dans le data warehouse, C’est ce qu’on appelle un ETL cette méthode est celle que vous rencontrerez dans 95% des cas. à la fin on fait souvent du reporting et de la data visualisation pour le métier.
 
@@ -55,13 +61,17 @@ Les data warehouses sont la combinaison de différentes sources de données, on 
 
 Les data darehouse ont était créé pour la Business intelligence (B.I). La Business Intelligence (BI), également appelée "intelligence d'affaires" ou "informatique décisionnelle", est un ensemble de méthodes, d'outils et de technologies utilisés pour collecter, analyser et présenter des données pertinentes afin d'aider les entreprises à prendre des décisions stratégiques éclairées. La BI vise à convertir les données brutes en informations significatives, puis en connaissances exploitables, en utilisant des techniques telles que l'extraction de données, le traitement analytique, la modélisation statistique et la visualisation des données.
 
-![](Aspose.Words.4518f7f8-6e9a-4328-a0ad-35a1f5e5d7c2.004.png)
+<p align="center">
+  <img src="Aspose.Words.4518f7f8-6e9a-4328-a0ad-35a1f5e5d7c2.004.png" />
+</p>
 
 ## Datalake vs Data warehouse
 
 Ces termes désignent un endroit où nous pouvons centraliser nos données, mais il existe une différence notable, les datalakes sont des technologies qui sont utilisées pour stocker les données en format brutes, sans aucune transformation, ce qui nous permet (en plus des données tabulaires) de stocker des données non structurées comme les vidéos, les image et le texte.
 
-![](Aspose.Words.4518f7f8-6e9a-4328-a0ad-35a1f5e5d7c2.005.png)
+<p align="center">
+  <img src="Aspose.Words.4518f7f8-6e9a-4328-a0ad-35a1f5e5d7c2.005.png" />
+</p>
 
 Le plus souvent on les utilise conjointement (surtout dans le cloud), le datalake sert d'espace où nous stockons les données avant de les retravailler sous format exploitable qui peuvent être chargé dans le data warehouse (si les données sont tabulaires sinon elle reste au niveau du datalake uniquement). Cependant, le datalake à quelques détracteur, la plupart des gens ont utilisé le datalake comme endroit où on peut stocker toutes les données sans réelle organisation ce qui a créé des data swamp.
 
@@ -73,35 +83,51 @@ un data warehouse à plusieurs couches (Layers en anglais) qui le compose.
 
 Le premier layer est-ce qu’on appelle “staging” c’est l’étape où toutes les données qui sont censées être utilisé sont stockées sous format iso à la source (non travaillé/transformé).
 
-![](Aspose.Words.4518f7f8-6e9a-4328-a0ad-35a1f5e5d7c2.006.png)
+<p align="center">
+  <img src="Aspose.Words.4518f7f8-6e9a-4328-a0ad-35a1f5e5d7c2.006.png" />
+</p>
 
 On peut quelques fois faire de légères transformations comme concaténé les mêmes données en une seule table.
 
-![](Aspose.Words.4518f7f8-6e9a-4328-a0ad-35a1f5e5d7c2.007.png)
+<p align="center">
+  <img src="Aspose.Words.4518f7f8-6e9a-4328-a0ad-35a1f5e5d7c2.007.png" />
+</p>
 
 Pour les étapes qui nécessitent des transformations plus lourdes, nous devons utiliser le Core/Data warehouse
 
-![](Aspose.Words.4518f7f8-6e9a-4328-a0ad-35a1f5e5d7c2.008.png)
+<p align="center">
+  <img src="Aspose.Words.4518f7f8-6e9a-4328-a0ad-35a1f5e5d7c2.008.png" />
+</p>
 
 Dans certains cas, le Core est layers finale que nous exposons au métiers
 
-![](Aspose.Words.4518f7f8-6e9a-4328-a0ad-35a1f5e5d7c2.009.png)
+<p align="center">
+  <img src="Aspose.Words.4518f7f8-6e9a-4328-a0ad-35a1f5e5d7c2.009.png" />
+</p>
 
 Quelques fois quand nous avons un data warehouse très grand, nous pouvons subdiviser en sous ensemble pour des besoins spécifiques et les exposer, c’est ce qu’on appelle des data mart.
 
-![](Aspose.Words.4518f7f8-6e9a-4328-a0ad-35a1f5e5d7c2.010.png)
+<p align="center">
+  <img src="Aspose.Words.4518f7f8-6e9a-4328-a0ad-35a1f5e5d7c2.010.png" />
+</p>
 
 Dans de rare cas, quand les données sont vraiment “Raw” et nécessitent des grosses transformations, nous pouvons ajouter un nouveau layer qui est spécialisé dans le cleaning de ces données.
 
-![](Aspose.Words.4518f7f8-6e9a-4328-a0ad-35a1f5e5d7c2.011.png)Même si on considère que le Core est considéré comme le data warehouse il est important de comprendre que tous ces élément sont des composantes du “vrai” data warehouse
+<p align="center">
+  <img src="Aspose.Words.4518f7f8-6e9a-4328-a0ad-35a1f5e5d7c2.011.png" />
+</p>Même si on considère que le Core est considéré comme le data warehouse il est important de comprendre que tous ces élément sont des composantes du “vrai” data warehouse
 
-![](Aspose.Words.4518f7f8-6e9a-4328-a0ad-35a1f5e5d7c2.012.png)
+<p align="center">
+  <img src="Aspose.Words.4518f7f8-6e9a-4328-a0ad-35a1f5e5d7c2.012.png" />
+</p>
 
 ## Staging Area
 
 Le “Staging” est la partie du data warehouse qui est conçu pour recevoir les données sous formats raw/iso des source de données. C’est le E de ETL soit l’extraction (E = Extract).
 
-![](Aspose.Words.4518f7f8-6e9a-4328-a0ad-35a1f5e5d7c2.013.png)
+<p align="center">
+  <img src="Aspose.Words.4518f7f8-6e9a-4328-a0ad-35a1f5e5d7c2.013.png" />
+</p>
 
 À partir de cette couche, on peut commencer à transformation et les push dans le Core/Data warehouse pour la valorisation de nos données.
 
@@ -112,11 +138,15 @@ Les principales raisons de l’utilisation d’un staging sont :
 
 ## Data Mart
 
-![](Aspose.Words.4518f7f8-6e9a-4328-a0ad-35a1f5e5d7c2.014.png)
+<p align="center">
+  <img src="Aspose.Words.4518f7f8-6e9a-4328-a0ad-35a1f5e5d7c2.014.png" />
+</p>
 
 Le Core Data mart layers est souvent vu comme le layers qui sert de layers d’exposition des données pour que les métiers puissent commencer leur tâches pour valoriser la données, cependant il peut arriver que les data warehouse soit trop grand, dans ce cas de figure, nous allons créer des sous ensemble issus du core/data warehouse pour créer des data mart plus spécialiser (souvent un par usecase) qui rendra la tâche d’acquisition de la données plus simple pour les utilisateurs.
 
-![](Aspose.Words.4518f7f8-6e9a-4328-a0ad-35a1f5e5d7c2.015.png)
+<p align="center">
+  <img src="Aspose.Words.4518f7f8-6e9a-4328-a0ad-35a1f5e5d7c2.015.png" />
+</p>
 
 Avantages :
 
@@ -129,18 +159,24 @@ Ce concept est souvent controversé, il faut réfléchir en amont pour savoir s'
 
 Une base de données où les données sont structuré comme des tables (ligne, colonne) où les données sont requétées grâce à SQL. L’une des particularité des base de données relationnelles est qu’elle utilise des “keys” (clé) qui permettent d’avoir des “relations” entre les tables.
 
-![](Aspose.Words.4518f7f8-6e9a-4328-a0ad-35a1f5e5d7c2.016.png)
+<p align="center">
+  <img src="Aspose.Words.4518f7f8-6e9a-4328-a0ad-35a1f5e5d7c2.016.png" />
+</p>
 
 - Primary key (clé primaire) : permet d’identifier chacune des lignes de manière unique.
 - Foreign key (clé étrangère) : permet de faire la jointure avec d’autres tables, cette foreign key est souvent la primary keys d’une autre table
 
-![](Aspose.Words.4518f7f8-6e9a-4328-a0ad-35a1f5e5d7c2.017.png)
+<p align="center">
+  <img src="Aspose.Words.4518f7f8-6e9a-4328-a0ad-35a1f5e5d7c2.017.png" />
+</p>
 
 ## In-memory database
 
 Les in-memory database sont optimisées pour les avoir de meilleures performances pour les querys ce qui implique que ce sont de bons outils pour l’analytique, elles sont souvent utilisées pour les data marts.
 
-![](Aspose.Words.4518f7f8-6e9a-4328-a0ad-35a1f5e5d7c2.018.png)
+<p align="center">
+  <img src="Aspose.Words.4518f7f8-6e9a-4328-a0ad-35a1f5e5d7c2.018.png" />
+</p>
 
 Les base de données traditionnelles vont aller chercher les données en deux étapes :
 
@@ -149,7 +185,9 @@ Les base de données traditionnelles vont aller chercher les données en deux é
 
 Les base de données in memory stockent toutes les données directement dans les base de données, on élimine le temps de réponse dû à l’accès au disque
 
-![](Aspose.Words.4518f7f8-6e9a-4328-a0ad-35a1f5e5d7c2.019.png)
+<p align="center">
+  <img src="Aspose.Words.4518f7f8-6e9a-4328-a0ad-35a1f5e5d7c2.019.png" />
+</p>
 
 Il y a certain compromis cependant :
 
@@ -158,7 +196,9 @@ Il y a certain compromis cependant :
 
 ## OLAP Cubes
 
-![](Aspose.Words.4518f7f8-6e9a-4328-a0ad-35a1f5e5d7c2.020.png)
+<p align="center">
+  <img src="Aspose.Words.4518f7f8-6e9a-4328-a0ad-35a1f5e5d7c2.020.png" />
+</p>
 
 Les data warehouse sont souvent composé de deux manières :
 
@@ -167,7 +207,9 @@ Les data warehouse sont souvent composé de deux manières :
 
 Nous avons déjà vu le fonctionnement des base de relationnelle, pour les Cubes les données sont organisées différemment, les cubes sont souvent vu comme des ensemble de données multidimensionnelles, à la place des tables, on utilise des arrays et la raison principale de cette nouvelle modélisation est qu’elle permet d’augmenter la performance des querys (et donc très utile pour l’analytique).
 
-![](Aspose.Words.4518f7f8-6e9a-4328-a0ad-35a1f5e5d7c2.021.png)
+<p align="center">
+  <img src="Aspose.Words.4518f7f8-6e9a-4328-a0ad-35a1f5e5d7c2.021.png" />
+</p>
 
 - Les données sont pré-calculées.
 - Le langage est MDX.

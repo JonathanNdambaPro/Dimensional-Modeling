@@ -7,7 +7,9 @@ Exemple :
 - profit par an
 - profit par catégories
 
-![](Aspose.Words.f93e53d6-8398-4ba6-b52f-2dc786408bb0.001.png)
+<p align="center">
+  <img src="Aspose.Words.f93e53d6-8398-4ba6-b52f-2dc786408bb0.001.png" />
+</p>
 
 étant donné la forme des interactions entre les table de faits et celle de de dimension qui ressemble à une étoile, on appelle ça le star schema.
 
@@ -20,25 +22,37 @@ Exemple :
 
 Ici, nous avons une table qui peut poser certains problèmes, nous avons par exemple la colonne name qui se répète et crée des lignes dupliquées ce qui peut réduire la performance du requêtage.
 
-![](Aspose.Words.f93e53d6-8398-4ba6-b52f-2dc786408bb0.002.png)
+<p align="center">
+  <img src="Aspose.Words.f93e53d6-8398-4ba6-b52f-2dc786408bb0.002.png" />
+</p>
 
 Étant donné que le customer\_id contient déjà l’information de qui est notre client, nous pouvons supprimer la colonne name
 
-![](Aspose.Words.f93e53d6-8398-4ba6-b52f-2dc786408bb0.003.png)
+<p align="center">
+  <img src="Aspose.Words.f93e53d6-8398-4ba6-b52f-2dc786408bb0.003.png" />
+</p>
 
-![](Aspose.Words.f93e53d6-8398-4ba6-b52f-2dc786408bb0.004.png)
+<p align="center">
+  <img src="Aspose.Words.f93e53d6-8398-4ba6-b52f-2dc786408bb0.004.png" />
+</p>
 
 Le produit peut être considéré comme une catégorie, on peut donc créer une nouvelle table à laquelle on va associer une foreign key qui nous permettra de faire la jointure.
 
-![](Aspose.Words.f93e53d6-8398-4ba6-b52f-2dc786408bb0.005.png)
+<p align="center">
+  <img src="Aspose.Words.f93e53d6-8398-4ba6-b52f-2dc786408bb0.005.png" />
+</p>
 
-![](Aspose.Words.f93e53d6-8398-4ba6-b52f-2dc786408bb0.006.png)
+<p align="center">
+  <img src="Aspose.Words.f93e53d6-8398-4ba6-b52f-2dc786408bb0.006.png" />
+</p>
 
 Nous avons donc une table de fait qui regroupe soit des foreign key soit des faits (mesure à un instant T) et une table de dimension avec des catégories est une primary key.
 
 On peut faire la même chose pour une table de dimension de date, cela va nous permettre de faire des calcules plus simple comme le profit par mois.
 
-![](Aspose.Words.f93e53d6-8398-4ba6-b52f-2dc786408bb0.007.png)
+<p align="center">
+  <img src="Aspose.Words.f93e53d6-8398-4ba6-b52f-2dc786408bb0.007.png" />
+</p>
 
 Cette méthode est la plus utilisée pour la modélisation dans un data warehouse, elle est en conséquence très importante à comprendre.
 
@@ -48,11 +62,15 @@ Faire la différence entre les fait et les dimensions ne sont pas forcément tri
 
 Pour rappel, la modélisation est la suivante :
 
-![](Aspose.Words.f93e53d6-8398-4ba6-b52f-2dc786408bb0.008.png)
+<p align="center">
+  <img src="Aspose.Words.f93e53d6-8398-4ba6-b52f-2dc786408bb0.008.png" />
+</p>
 
 Par exemple :
 
-![](Aspose.Words.f93e53d6-8398-4ba6-b52f-2dc786408bb0.009.png)
+<p align="center">
+  <img src="Aspose.Words.f93e53d6-8398-4ba6-b52f-2dc786408bb0.009.png" />
+</p>
 
 La table de fait est le centre de notre star schema, elle est composée des mesures importantes de notre entreprise, elle est la fondation de notre data warehouse. Ces faits sont ce que l’on veut agréger et/ou analyser par rapport à nos dimensions.
 
@@ -74,11 +92,15 @@ Il y a d’autre caractéristique qui permette d’identifier si une colonne est
 
 Le star schema est le schéma le plus utilisé dans le data warehouse, il est donc important de le comprendre en détail.
 
-![](Aspose.Words.f93e53d6-8398-4ba6-b52f-2dc786408bb0.010.png)
+<p align="center">
+  <img src="Aspose.Words.f93e53d6-8398-4ba6-b52f-2dc786408bb0.010.png" />
+</p>
 
 Comme on l’a vu, le star schéma est composé de d’une table de fait au milieu est de plusieurs table de fait qui l’entoure, la table de fait est relié aux tables de dimension par les foreign keys.
 
-![](Aspose.Words.f93e53d6-8398-4ba6-b52f-2dc786408bb0.011.jpeg)
+<p align="center">
+  <img src="Aspose.Words.f93e53d6-8398-4ba6-b52f-2dc786408bb0.011.jpeg" />
+</p>
 
 On a des relations 1:n ce qui signifie que pour un product\_id de la table de dimension, on peut avoir plusieurs ligne de la table de faits.
 
@@ -96,11 +118,15 @@ Pour plus d’information sur la normalisation, aller au cours SQL.
 
 Le snowflake schema est une généralisation du star schéma, le star schéma est un snowflake schema mais avec un seul niveau de hiérarchies.
 
-![](Aspose.Words.f93e53d6-8398-4ba6-b52f-2dc786408bb0.012.png)
+<p align="center">
+  <img src="Aspose.Words.f93e53d6-8398-4ba6-b52f-2dc786408bb0.012.png" />
+</p>
 
 Le snowflake schéma n’as pas de limitation dans le niveau de hiérarchies ce qui permet d’avoir des données encore plus normalisées et ainsi réduire les redondances.
 
-![](Aspose.Words.f93e53d6-8398-4ba6-b52f-2dc786408bb0.013.jpeg)
+<p align="center">
+  <img src="Aspose.Words.f93e53d6-8398-4ba6-b52f-2dc786408bb0.013.jpeg" />
+</p>
 
 Si on compare les deux schéma, on a :
 
@@ -125,17 +151,23 @@ Dans la majorité des cas, les données d’une table de fait sont numériques e
 
 Exemple additif :
 
-![](Aspose.Words.f93e53d6-8398-4ba6-b52f-2dc786408bb0.014.png)
+<p align="center">
+  <img src="Aspose.Words.f93e53d6-8398-4ba6-b52f-2dc786408bb0.014.png" />
+</p>
 
 Ici, on peut faire un group by de unit peu importe la catégorie, il en va de même pour la date. Exemple semi-additif :
 
-![](Aspose.Words.f93e53d6-8398-4ba6-b52f-2dc786408bb0.015.png)
+<p align="center">
+  <img src="Aspose.Words.f93e53d6-8398-4ba6-b52f-2dc786408bb0.015.png" />
+</p>
 
 La données balance peut être additionné en fonction du portfolio, on peut compler le portfolio avec la date pour avoir une vision encore plus fine, mais on ne peut pas l’additionner en fonction de la date seule car même si techniquement cela est possible ça n’a pas de sens.
 
 Exemple non additif :
 
-![](Aspose.Words.f93e53d6-8398-4ba6-b52f-2dc786408bb0.016.png)
+<p align="center">
+  <img src="Aspose.Words.f93e53d6-8398-4ba6-b52f-2dc786408bb0.016.png" />
+</p>
 
 Dans cet exemple le price n’est pas additif, en effet il y a des unité il faudrait multiplier le prix par les unité pour avoir le montant total qui serait une colonne additive.
 
@@ -143,7 +175,9 @@ Dans cet exemple le price n’est pas additif, en effet il y a des unité il fau
 
 Quand nous avons null dans la majorité des cas ce n’est pas un problème car SQL sais comment les gérer quand nous voulons faire des agrégat.
 
-![](Aspose.Words.f93e53d6-8398-4ba6-b52f-2dc786408bb0.017.png)
+<p align="center">
+  <img src="Aspose.Words.f93e53d6-8398-4ba6-b52f-2dc786408bb0.017.png" />
+</p>
 
 Quelques fois, il peut être intéressant de remplacer null par 0, car si nous ne l’avions pas fait quand nous faisons la moyenne sur incoming, on obtient 50 alors qu’ici le sens de null est 0, si nous ne sommes pas sûrs de la valeur de null dans une colonne et qu’elle devrait être remplacée pour avoir plus de sens alors, nous devrions échanger avec les experts de ses données pour vérifier qu’il n’y a pas de problème
 
@@ -153,7 +187,9 @@ Il faut également faire attention aux foreing keys si elles sont null, il faut 
 
 C’est un type de requête très demandé par le métier pour avoir une vue temporelle et il n’est pas forcément trivial.
 
-![](Aspose.Words.f93e53d6-8398-4ba6-b52f-2dc786408bb0.018.png)
+<p align="center">
+  <img src="Aspose.Words.f93e53d6-8398-4ba6-b52f-2dc786408bb0.018.png" />
+</p>
 
 Il peut en voir pour chaque échelle temporelle (journalier, mensuelle, annuelle…), si on venait à tous les stocker, on aurait un problème de mémoire, en plus de ça nous ne serions plus à l’échelle des grain et nous violerons un principe de base des tables de faits.
 
@@ -161,7 +197,9 @@ La plupart du temps, les outtils de BI peuvent prendre en charge ce type de calc
 
 ## Transactional fact table
 
-![](Aspose.Words.f93e53d6-8398-4ba6-b52f-2dc786408bb0.019.png)
+<p align="center">
+  <img src="Aspose.Words.f93e53d6-8398-4ba6-b52f-2dc786408bb0.019.png" />
+</p>
 
 Ce type de tables est le plus fondamental.
 
@@ -178,7 +216,9 @@ Elles ont cependant un mauvais côté, c'est qu’elles s'agrandissent très vit
 
 ## Periodic fact table
 
-![](Aspose.Words.f93e53d6-8398-4ba6-b52f-2dc786408bb0.020.png)
+<p align="center">
+  <img src="Aspose.Words.f93e53d6-8398-4ba6-b52f-2dc786408bb0.020.png" />
+</p>
 
 - une ligne sommarisation de plusieurs événements/transaction pour une période donnée (1 heure, 1 jour, 1 mois…).
 - La plus basse mesure temporelle devient automatiquement notre grain
@@ -189,7 +229,9 @@ Elles ont cependant un mauvais côté, c'est qu’elles s'agrandissent très vit
 
 ## Accumulation snapshot fact table
 
-![](Aspose.Words.f93e53d6-8398-4ba6-b52f-2dc786408bb0.021.png)
+<p align="center">
+  <img src="Aspose.Words.f93e53d6-8398-4ba6-b52f-2dc786408bb0.021.png" />
+</p>
 
 - Une ligne sommarisation de plusieurs événements/transaction
 - La sommarisation est la durée de vie du process (Ex : ordre de commande)
@@ -201,7 +243,9 @@ Elles ont cependant un mauvais côté, c'est qu’elles s'agrandissent très vit
 
 4 considérations :
 
-![](Aspose.Words.f93e53d6-8398-4ba6-b52f-2dc786408bb0.022.png)
+<p align="center">
+  <img src="Aspose.Words.f93e53d6-8398-4ba6-b52f-2dc786408bb0.022.png" />
+</p>
 
 - Identifier le business process pour l’analyse.
 - Déclarer le grain (Transaction, ordre, journalier etc.).
@@ -212,11 +256,15 @@ Elles ont cependant un mauvais côté, c'est qu’elles s'agrandissent très vit
 
 Il peut y avoir des moment où les primary key d’un jeu de données ne sont pas très simple ou explicite pour notre usecase, dans ce cas de figure nous utilisons ce qu’on appelle une surrogate key.
 
-![](Aspose.Words.f93e53d6-8398-4ba6-b52f-2dc786408bb0.023.png)
+<p align="center">
+  <img src="Aspose.Words.f93e53d6-8398-4ba6-b52f-2dc786408bb0.023.png" />
+</p>
 
 Une sorragate key est une clé artificielle que nous créons pour faciliter notre travail.
 
-![](Aspose.Words.f93e53d6-8398-4ba6-b52f-2dc786408bb0.024.png)
+<p align="center">
+  <img src="Aspose.Words.f93e53d6-8398-4ba6-b52f-2dc786408bb0.024.png" />
+</p>
 
 Comme ces clés sont artificielles, il est suggéré de mettre un suffixe pour que l’ensemble de personne qui devront travailler avec puisse comprendre qu’elles ne sont pas issus de la table, on utilise dans le cours les suffixe \_PK ou \_FK.
 
@@ -232,11 +280,15 @@ les avantages sont :
 
 Comme les tables de faits, les table de dimension nécessite une clé primaire. L’une des best practice est de définir une surrogate key
 
-![](Aspose.Words.f93e53d6-8398-4ba6-b52f-2dc786408bb0.025.png)
+<p align="center">
+  <img src="Aspose.Words.f93e53d6-8398-4ba6-b52f-2dc786408bb0.025.png" />
+</p>
 
 Ces changement doivent être effectué sur les fact table pour permettre une jointure
 
-![](Aspose.Words.f93e53d6-8398-4ba6-b52f-2dc786408bb0.026.png)
+<p align="center">
+  <img src="Aspose.Words.f93e53d6-8398-4ba6-b52f-2dc786408bb0.026.png" />
+</p>
 
 ## Date dimension
 
@@ -250,13 +302,19 @@ Il y a certaines règles qui peuvent aider et qui sont à valider avec le busine
 - Date fiscal.
 - Flags (Weekend, vacances, etc).
 
-![](Aspose.Words.f93e53d6-8398-4ba6-b52f-2dc786408bb0.027.png)
+<p align="center">
+  <img src="Aspose.Words.f93e53d6-8398-4ba6-b52f-2dc786408bb0.027.png" />
+</p>
 
 ## Null in dimension
 
 Les valeurs null doivent être évité à tout prix, pour les foreign keys, on peut utiliser une valeur que l’on présélectionne (999, -1).
 
-![](Aspose.Words.f93e53d6-8398-4ba6-b52f-2dc786408bb0.028.png) ![](Aspose.Words.f93e53d6-8398-4ba6-b52f-2dc786408bb0.029.png)
+<p align="center">
+  <img src="Aspose.Words.f93e53d6-8398-4ba6-b52f-2dc786408bb0.028.png" />
+</p> <p align="center">
+  <img src="Aspose.Words.f93e53d6-8398-4ba6-b52f-2dc786408bb0.029.png" />
+</p>
 
 Cependant en fonction des règles business les fait peuvent être accepté en tant que valeur null
 
@@ -268,13 +326,17 @@ Les données sont souvent normalisées, car elles apportent des avantages consé
 
 Nous devons chercher un format dénormalisé le plus possible les dimensions.
 
-![](Aspose.Words.f93e53d6-8398-4ba6-b52f-2dc786408bb0.030.png)
+<p align="center">
+  <img src="Aspose.Words.f93e53d6-8398-4ba6-b52f-2dc786408bb0.030.png" />
+</p>
 
 ## Conformed dimension
 
 Une conformed dimension est une dimension qui est utilisée par plusieurs table de faits en même temps.
 
-![](Aspose.Words.f93e53d6-8398-4ba6-b52f-2dc786408bb0.031.png)
+<p align="center">
+  <img src="Aspose.Words.f93e53d6-8398-4ba6-b52f-2dc786408bb0.031.png" />
+</p>
 
 Cette dimension permet de pouvoir comparer différent les différentes tables de faits entre elle, car elles sont liées.
 
@@ -296,7 +358,9 @@ Cette méthode est la plus simple, elle consiste à ne pas modifier la table de 
 
 Dans ce type de slowing dimension les données sont modifiées directement dans la table de dimension si changement il y a.
 
-![](Aspose.Words.f93e53d6-8398-4ba6-b52f-2dc786408bb0.032.png)
+<p align="center">
+  <img src="Aspose.Words.f93e53d6-8398-4ba6-b52f-2dc786408bb0.032.png" />
+</p>
 
 étant donné que la key ne change pas, les modifications appliquées n’affecte pas la table de fait.
 
@@ -309,21 +373,29 @@ Cependant, il y a quelques problématique avec ce type :
 
 Surement le type le plus utilisé, elle protège du problème du type 1 la perte de l’historique. Exemple type 1 :
 
-![](Aspose.Words.f93e53d6-8398-4ba6-b52f-2dc786408bb0.032.png)
+<p align="center">
+  <img src="Aspose.Words.f93e53d6-8398-4ba6-b52f-2dc786408bb0.032.png" />
+</p>
 
 Exemple type 2 :
 
-![](Aspose.Words.f93e53d6-8398-4ba6-b52f-2dc786408bb0.033.png)
+<p align="center">
+  <img src="Aspose.Words.f93e53d6-8398-4ba6-b52f-2dc786408bb0.033.png" />
+</p>
 
 Comme on peut le voir, on ajoute un nouveau type avec une nouvelle key, ce qui permettra de ne pas casser les anciennes requêtes qui cherchaient cette valeur et de mettre à jour les anciennes valeurs si besoin est.
 
-![](Aspose.Words.f93e53d6-8398-4ba6-b52f-2dc786408bb0.034.png)
+<p align="center">
+  <img src="Aspose.Words.f93e53d6-8398-4ba6-b52f-2dc786408bb0.034.png" />
+</p>
 
 Il peut arriver parfois que l’ajout d’un produit sur la table de dimension est une mise à jour, un nouvel utilisateur aurait du mal dans l’état à détecter si c’est le cas ou juste un nouveau produit, par ailleurs, on peut très bien demander une analyse sur une période spécifique sans prendre la modification en compte ou l’inverse.
 
 Une des solutions retenues serait de stocker deux dates dans deux nouvelles colonnes, une colonnes qui indique le début de la mise en place du produit et une qui indique sa fin.
 
-![](Aspose.Words.f93e53d6-8398-4ba6-b52f-2dc786408bb0.035.png)
+<p align="center">
+  <img src="Aspose.Words.f93e53d6-8398-4ba6-b52f-2dc786408bb0.035.png" />
+</p>
 
 Une des best practices pour la date de fin d’un produit qui est toujours actif est de mettre une date très loin dans l’avenir (Ici, on a mis 2100-01-01).
 
@@ -333,7 +405,9 @@ Point d’attention : ici, on a deux key, la surrogate key(product\_PK/clé arti
 
 Le type 3 est un mix entre le type 1 et le type 2, il s’agit d’ajouter une colonne qui contiendra les anciennes valeurs, on évite donc d’ajouter une nouvelle ligne
 
-![](Aspose.Words.f93e53d6-8398-4ba6-b52f-2dc786408bb0.036.png)
+<p align="center">
+  <img src="Aspose.Words.f93e53d6-8398-4ba6-b52f-2dc786408bb0.036.png" />
+</p>
 
 elle est très utile quand il y a des changement significatif (restructuration de l’entreprise), mais si ce sont des changements imprévisibles et fréquents, il faut préférer le type 2.
 
@@ -341,8 +415,12 @@ Si cependant il venait à avoir une nouvelle valeur qui n’était pas présente
 
 Exemple sans nouvelle valeur :
 
-![](Aspose.Words.f93e53d6-8398-4ba6-b52f-2dc786408bb0.037.png)
+<p align="center">
+  <img src="Aspose.Words.f93e53d6-8398-4ba6-b52f-2dc786408bb0.037.png" />
+</p>
 
 Exemple avec nouvelle valeur :
 
-![](Aspose.Words.f93e53d6-8398-4ba6-b52f-2dc786408bb0.038.png)
+<p align="center">
+  <img src="Aspose.Words.f93e53d6-8398-4ba6-b52f-2dc786408bb0.038.png" />
+</p>
